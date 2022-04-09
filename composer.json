@@ -11,7 +11,8 @@
   ],
   "require-dev": {
     "pckg-app/frontend-dev": "dev-master",
-    "pckg/framework": "dev-master"
+    "pckg/framework": "dev-master",
+    "ramsey/uuid": "^4.1"
   },
   "autoload": {
     "psr-0": {
