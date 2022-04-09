@@ -1,0 +1,44 @@
+{
+  "name": "pckg/tenant",
+  "description": "Tenant layer for pckg framework",
+  "homepage": "https://github.com/pckg/tenant",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bojan Rajh",
+      "email": "schtr4jh@schtr4jh.net"
+    }
+  ],
+  "require-dev": {
+    "pckg-app/frontend-dev": "dev-master",
+    "pckg/framework": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "Pckg": "src\\"
+    }
+  },
+  "scripts": {
+    "test": [
+      "true || vendor/bin/phpunit --help --stop-on-defect",
+      "true || vendor/bin/phpcloc cloc src/",
+      "vendor/bin/phpstan analyse src/ --level=1",
+      "vendor/bin/phpcs -s --standard=ruleset.xml --extensions=php --warning-severity=8 --error-severity=1 --parallel=2 -p src/",
+      "vendor/bin/codecept run || true"
+    ],
+    "applycsandpatch": [
+      "composer autofix && composer autopatch"
+    ],
+    "autofix": [
+      "vendor/bin/phpcs --standard=ruleset.xml --extensions=php --report-diff=phpcs.diff --warning-severity=8 --error-severity=1 --parallel=2 -p src/"
+    ],
+    "autopatch": [
+      "patch -p0 -ui phpcs.diff ; rm phpcs.diff"
+    ]
+  },
+  "scripts-descriptions": {
+    "test": "Run all tests and quality checks"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
