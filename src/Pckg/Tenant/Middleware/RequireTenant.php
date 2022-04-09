@@ -22,17 +22,17 @@ class RequireTenant
 
         $identifier = config('pckg.tenant.identifier');
         if (!$identifier) {
-            //response()->redirect('/');
             throw new \Exception('Tenant not loaded');
         }
 
+        //trigger(RequireTenant::class . '.validateUser');
         $user = auth()->user();
         if (!$user) {
-            //throw new Unauthorized();
-        }
-
-        if (false && !$user->isSuperadmin()) {
-            //throw new Unauthorized('Only superadmins can access this page');
+            response()->redirect('/?reason=uauthenticated&tenant=' . $identifier);
+            throw new Unauthorized();
+        } else if (!$user->isSuperadmin()) {
+            response()->redirect('/?reason=unauthorized&tenant=' . $identifier);
+            throw new Unauthorized('Only superadmins can access this page');
         }
 
         return $next();

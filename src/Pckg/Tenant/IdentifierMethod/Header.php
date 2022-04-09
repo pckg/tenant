@@ -4,14 +4,19 @@ namespace Pckg\Tenant\IdentifierMethod;
 
 class Header
 {
+    public function getHttpHeader()
+    {
+        return config('pckg.tenant.header', 'X-Pckg-Tenant-Id');
+    }
 
     public function can()
     {
-        return !!request()->header('X-Comms-Store-Uuid');
+        $header = $this->getHttpHeader();
+        return $header && !!request()->header($header);
     }
 
     public function get()
     {
-        return request()->header('X-Comms-Store-Uuid');
+        return request()->header($this->getHttpHeader());
     }
 }

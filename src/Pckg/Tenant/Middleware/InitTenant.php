@@ -2,7 +2,6 @@
 
 namespace Pckg\Tenant\Middleware;
 
-use Pckg\Framework\Exception\Bad;
 use Pckg\Tenant\Service\TenantManager;
 
 class InitTenant
@@ -17,7 +16,6 @@ class InitTenant
 
     /**
      * @throws \Throwable
-     * @throws Bad
      */
     public function handle()
     {

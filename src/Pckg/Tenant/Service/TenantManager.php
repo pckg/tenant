@@ -49,10 +49,9 @@ class TenantManager
         try {
             message('Initializing tenant: ' . $uuid);
 
-            $file = '/www/_tenants/' . $uuid . '.json';
-            $file = path('storage') . '_tenants/' . $uuid . '.json';
+            $path = config('pckg.tenant.path', path('storage') . '_tenants');
+            $file = $path . '/' . $uuid . '.json';
 
-            // OR $file = '/www/$user/$project/htdocs/.env'; // ?
             if (!file_exists($file)) {
                 throw new Exception('Tenant config is not available - ' . $uuid);
             }

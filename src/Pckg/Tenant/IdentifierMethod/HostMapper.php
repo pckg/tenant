@@ -17,10 +17,7 @@ class HostMapper
     public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->hosts = [
-            // 'admin.comms.local:8082' => null, // multi-tenant access, should have /@identifier
-            'gnpdev.admin.comms.local:8082' => 'gnpdev',
-        ];
+        $this->hosts = config('pckg.tenant.hosts', []);
     }
 
     public function can(): bool
