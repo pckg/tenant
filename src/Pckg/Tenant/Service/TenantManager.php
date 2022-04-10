@@ -2,6 +2,7 @@
 
 namespace Pckg\Tenant\Service;
 
+use Pckg\Collection;
 use Pckg\Framework\Config;
 use Pckg\Framework\Exception;
 use Pckg\Tenant\IdentifierMethod\Header;
@@ -20,32 +21,48 @@ class TenantManager
         $this->config = $config;
     }
 
-    public function resolveUuid(): ?string
+    public function getHandlers(): Collection
     {
-        // @T00D00 - detect tenant switch?
         return collect([
             Header::class,
             UrlPrefix::class,
             HttpReferer::class,
             HostMapper::class,
-        ])->realReduce(function ($identifer, $i, $existing) {
-            if ($existing) {
-                return $existing;
-            }
+        ]);
+    }
 
-            $object = new $identifer(request());
+    public function resolveUuid(): ?string
+    {
+        $uuids = $this->getHandlers()
+            ->map(fn($handler) => new $identifer(request()))
+            ->filter(fn($handler) => $handler->can())
+            ->map(fn($handler) => $handler->get())
+            ->removeEmpty()
+            ->unique();
 
-            return $object->can() ? $object->get() : null;
-        }, null);
+        if (!$uuids->has()) {
+            return null;
+        }
+
+        if ($uuids->count() !== 1) {
+            error_log('Multiple tenants resolved ' . $capable->toJSON());
+            throw new Exception('Multiple tenants resolved');
+        }
+
+        $valid = $uuids->filter(fn($value) => mb_strtolower($value) === $value
+            && (Uuid::isValid($value) || preg_match('/^[a-z0-9]+$/', $value))
+        );
+
+        if ($valid->count() !== 1) {
+            error_log('Invalid tenants detected ' . $uuids->toJSON());
+            throw new Exception('Invalid tenants detected');
+        }
+
+        return $capable->first();
     }
 
     public function applyConfigForUuid(string $uuid)
     {
-        // must be in one of 3 forms: uuid, a-z string of length < 20
-        if (mb_strtolower($uuid) !== $uuid || (!Uuid::isValid($uuid) && !preg_match('/^[a-z0-9]+$/', $uuid))) {
-            throw new \Exception('Invalid tenant - ' . $uuid);
-        }
-
         try {
             message('Initializing tenant: ' . $uuid);
 
