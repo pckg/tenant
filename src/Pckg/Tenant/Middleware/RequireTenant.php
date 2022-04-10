@@ -2,6 +2,7 @@
 
 namespace Pckg\Tenant\Middleware;
 
+use Pckg\Auth\Controller\Auth;
 use Pckg\Framework\Exception\Unauthorized;
 
 class RequireTenant
@@ -20,20 +21,30 @@ class RequireTenant
             return $next();
         }
 
+        $controller = router()->get('controller');
+        if ($controller === Auth::class) {
+            return $next();
+        }
+
         $identifier = config('pckg.tenant.identifier');
         if (!$identifier) {
             throw new \Exception('Tenant not loaded');
         }
 
-        //trigger(RequireTenant::class . '.validateUser');
-        $user = auth()->user();
+        $auth = auth();
+
+        //$auth->useProvider('frontend');
+        //$auth->setSecureCookiePrefix(config('pckg.tenant.identifier', null));
+
+        $isLoggedIn = $auth->isLoggedIn();
+        $user = $auth->user();
         if (!$user) {
-            response()->redirect('/?reason=uauthenticated&tenant=' . $identifier);
+            trigger(RequireTenant::class . '.user.unauthenticated');
+
             throw new Unauthorized();
-        } else if (!$user->isSuperadmin()) {
-            response()->redirect('/?reason=unauthorized&tenant=' . $identifier);
-            throw new Unauthorized('Only superadmins can access this page');
         }
+
+        trigger(RequireTenant::class . '.validateUser', ['user' => $user]);
 
         return $next();
     }
