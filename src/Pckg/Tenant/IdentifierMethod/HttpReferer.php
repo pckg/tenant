@@ -16,7 +16,30 @@ class HttpReferer
 
     public function can(): bool
     {
-        return strpos($this->request->server('HTTP_REFERER', null), 'https://' . $this->request->server('HTTP_HOST') . '/@') === 0;
+        $url = $this->request->url();
+
+        // don't accept on tenant url
+        if (substr($url, 0, 2) === '/@') {
+            return false;
+        }
+
+        $referer = $this->request->server('HTTP_REFERER', null);
+        // require referer
+        if (!$referer) {
+            return false;
+        }
+
+        $host = $this->request->server('HTTP_HOST');
+        $startsWithTenant = strpos($referer, 'https://' . $host . '/@') === 0;
+
+        // accept only from tenant urls (on non-tenant url)
+        if (!$startsWithTenant) {
+            return false;
+        }
+
+        $firstPart = explode('/', $url)[1] ?? null;
+
+        return strlen($firstPart) > 2;
     }
 
     public function get(): string

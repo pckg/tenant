@@ -16,19 +16,13 @@ class UrlPrefix
 
     public function can(): bool
     {
-        return substr($this->request->getUrl(), 0, 2) === '/@';
+        $url = $this->request->getUrl();
+
+        return substr($url, 0, 2) === '/@' && strlen($url) > 2;
     }
 
     public function get(): string
     {
-        $url = $this->request->getUrl();
-        $secondPos = strpos($url, '/', 1);
-        $length = ($secondPos ? $secondPos : strlen($url)) - 2;
-        $uuid = substr($url, 2, $length);
-        $newUrl = substr($url, strlen($uuid) + 2);
-        //request()->setUrl($newUrl);
-        //server()->set('REQUEST_URI', $newUrl);
-        message('Rewrote to', $newUrl);
-        return $uuid;
+        return substr(explode('/', $this->request->getUrl())[1], 1);
     }
 }

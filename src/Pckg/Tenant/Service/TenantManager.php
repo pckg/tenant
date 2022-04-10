@@ -24,17 +24,17 @@ class TenantManager
     public function getHandlers(): Collection
     {
         return collect([
-            Header::class,
-            UrlPrefix::class,
-            HttpReferer::class,
             HostMapper::class,
+            UrlPrefix::class,
+            Header::class,
+            HttpReferer::class,
         ]);
     }
 
     public function resolveUuid(): ?string
     {
         $uuids = $this->getHandlers()
-            ->map(fn($handler) => new $identifer(request()))
+            ->map(fn($handler) => new $handler(request()))
             ->filter(fn($handler) => $handler->can())
             ->map(fn($handler) => $handler->get())
             ->removeEmpty()
@@ -45,8 +45,8 @@ class TenantManager
         }
 
         if ($uuids->count() !== 1) {
-            error_log('Multiple tenants resolved ' . $capable->toJSON());
-            throw new Exception('Multiple tenants resolved');
+            error_log('Multiple tenants resolved ' . $uuids->toJSON());
+            throw new Exception('Multiple tenants resolved ' . $uuids->toJSON());
         }
 
         $valid = $uuids->filter(fn($value) => mb_strtolower($value) === $value
@@ -58,7 +58,7 @@ class TenantManager
             throw new Exception('Invalid tenants detected');
         }
 
-        return $capable->first();
+        return $uuids->first();
     }
 
     public function applyConfigForUuid(string $uuid)

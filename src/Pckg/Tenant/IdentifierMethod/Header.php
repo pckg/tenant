@@ -12,7 +12,8 @@ class Header
     public function can()
     {
         $header = $this->getHttpHeader();
-        return $header && !!request()->header($header);
+
+        return $header && strlen(request()->header($header) ?? '');
     }
 
     public function get()
