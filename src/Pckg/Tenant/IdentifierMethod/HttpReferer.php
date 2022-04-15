@@ -37,13 +37,13 @@ class HttpReferer
             return false;
         }
 
-        $firstPart = explode('/', $url)[1] ?? null;
+        $firstPart = explode('?', explode('/', $url)[1] ?? '')[0];
 
         return strlen($firstPart) > 2;
     }
 
     public function get(): string
     {
-        return substr(explode('/', $this->request->server('HTTP_REFERER'))[3], 1);
+        return explode('?', substr(explode('/', $this->request->server('HTTP_REFERER'))[3], 1))[0];
     }
 }

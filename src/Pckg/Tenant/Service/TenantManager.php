@@ -55,7 +55,7 @@ class TenantManager
 
         if ($valid->count() !== 1) {
             error_log('Invalid tenants detected ' . $uuids->toJSON());
-            throw new Exception('Invalid tenants detected');
+            throw new Exception('Invalid tenants detected ' . $uuids->toJSON());
         }
 
         return $uuids->first();

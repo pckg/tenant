@@ -23,6 +23,6 @@ class UrlPrefix
 
     public function get(): string
     {
-        return substr(explode('/', $this->request->getUrl())[1], 1);
+        return explode('?', substr(explode('/', $this->request->getUrl())[1], 1))[0];
     }
 }

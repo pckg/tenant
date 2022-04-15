@@ -21,6 +21,10 @@ class RequireTenant
             return $next();
         }
 
+        if (in_array('tag:internal', $tags)) {
+            return $next();
+        }
+
         $controller = router()->get('controller');
         if ($controller === Auth::class) {
             return $next();
