@@ -2,7 +2,7 @@ name: Pckg Tenant CI
 
 on:
   push:
-    branches: [master, master-yoda]
+    branches: [master]
   pull_request:
     branches: [master]
 
