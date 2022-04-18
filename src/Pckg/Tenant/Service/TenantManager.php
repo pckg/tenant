@@ -13,7 +13,6 @@ use Ramsey\Uuid\Uuid;
 
 class TenantManager
 {
-
     protected Config $config;
 
     public function __construct(Config $config)
@@ -50,8 +49,7 @@ class TenantManager
         }
 
         $valid = $uuids->filter(fn($value) => mb_strtolower($value) === $value
-            && (Uuid::isValid($value) || preg_match('/^[a-z0-9]+$/', $value))
-        );
+            && (Uuid::isValid($value) || preg_match('/^[a-z0-9]+$/', $value)));
 
         if ($valid->count() !== 1) {
             error_log('Invalid tenants detected ' . $uuids->toJSON());

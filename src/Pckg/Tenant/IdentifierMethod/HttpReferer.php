@@ -6,7 +6,6 @@ use Pckg\Framework\Request;
 
 class HttpReferer
 {
-
     protected Request $request;
 
     public function __construct(Request $request)

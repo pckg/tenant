@@ -6,7 +6,6 @@ use Pckg\Framework\Request;
 
 class HostMapper
 {
-
     protected Request $request;
 
     /**

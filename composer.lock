@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "661d8c2450e01fd4cc01d876edebf2d7",
+    "content-hash": "6fb8f688a290b63411c8648931ec89e8",
     "packages": [],
     "packages-dev": [
         {
@@ -1482,16 +1482,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.11",
+            "version": "5.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "2ab6744b7296ded80f8cc4f9509abbff393399aa"
+                "reference": "ad87d5a5ca981228e0e205c2bc7dfb8e24559b60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2ab6744b7296ded80f8cc4f9509abbff393399aa",
-                "reference": "2ab6744b7296ded80f8cc4f9509abbff393399aa",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/ad87d5a5ca981228e0e205c2bc7dfb8e24559b60",
+                "reference": "ad87d5a5ca981228e0e205c2bc7dfb8e24559b60",
                 "shasum": ""
             },
             "require": {
@@ -1546,9 +1546,9 @@
             ],
             "support": {
                 "issues": "https://github.com/justinrainbow/json-schema/issues",
-                "source": "https://github.com/justinrainbow/json-schema/tree/5.2.11"
+                "source": "https://github.com/justinrainbow/json-schema/tree/5.2.12"
             },
-            "time": "2021-07-22T09:24:00+00:00"
+            "time": "2022-04-13T08:02:27+00:00"
         },
         {
             "name": "league/uri-parser",
@@ -2032,16 +2032,16 @@
         },
         {
             "name": "pckg-app/frontend-dev",
-            "version": "dev-master",
+            "version": "dev-next-8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pckg-app/frontend-dev.git",
-                "reference": "13d61e838815bc7bc7cc90bdbd26448b8fcbbd79"
+                "reference": "3c16a170e562a817e8a230cfa38d90937f5384ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pckg-app/frontend-dev/zipball/13d61e838815bc7bc7cc90bdbd26448b8fcbbd79",
-                "reference": "13d61e838815bc7bc7cc90bdbd26448b8fcbbd79",
+                "url": "https://api.github.com/repos/pckg-app/frontend-dev/zipball/3c16a170e562a817e8a230cfa38d90937f5384ff",
+                "reference": "3c16a170e562a817e8a230cfa38d90937f5384ff",
                 "shasum": ""
             },
             "require": {
@@ -2054,11 +2054,11 @@
                 "codeception/module-webdriver": "1.*",
                 "codeception/specify": "^1.4",
                 "maximebf/debugbar": "^1.16",
+                "php": ">=8.0",
                 "phpstan/phpstan": "^0.12.82",
                 "phpstan/phpstan-strict-rules": "^0.12.9",
                 "squizlabs/php_codesniffer": "^3.5"
             },
-            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2074,9 +2074,63 @@
             "homepage": "https://github.com/pckg-app/frontend-dev",
             "support": {
                 "issues": "https://github.com/pckg-app/frontend-dev/issues",
-                "source": "https://github.com/pckg-app/frontend-dev/tree/master"
+                "source": "https://github.com/pckg-app/frontend-dev/tree/next-8.0"
             },
-            "time": "2021-06-19T19:21:00+00:00"
+            "time": "2022-04-03T19:07:11+00:00"
+        },
+        {
+            "name": "pckg/auth",
+            "version": "dev-next-8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pckg/auth.git",
+                "reference": "be09f496c81bd6160fc05d3d8654121b2208e33a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pckg/auth/zipball/be09f496c81bd6160fc05d3d8654121b2208e33a",
+                "reference": "be09f496c81bd6160fc05d3d8654121b2208e33a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "require-dev": {
+                "defuse/php-encryption": "^2.0",
+                "league/oauth2-client": "^2.6",
+                "pckg-app/api": "dev-next-8.0 as dev-master",
+                "pckg-app/frontend-dev": "dev-next-8.0 as dev-master",
+                "pckg/concept": "dev-master",
+                "pckg/framework": "dev-next-8.0 as dev-master",
+                "pckg/htmlbuilder": "dev-next-8.0 as dev-master",
+                "pckg/mail": "dev-master",
+                "pckg/manager": "dev-next-8.0 as dev-master",
+                "pckg/migrator": "dev-next-8.0 as dev-master"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pckg": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bojan Rajh",
+                    "email": "schtr4jh@schtr4jh.net"
+                }
+            ],
+            "description": "Provides basic functionality for authentication and authorization users in database, on Twitter, Facebook and with OAuth2 standard",
+            "homepage": "https://github.com/pckg/auth",
+            "support": {
+                "issues": "https://github.com/pckg/auth/issues",
+                "source": "https://github.com/pckg/auth/tree/next-8.0"
+            },
+            "time": "2022-04-18T09:48:24+00:00"
         },
         {
             "name": "pckg/cache",
@@ -2126,16 +2180,16 @@
         },
         {
             "name": "pckg/collection",
-            "version": "dev-master",
+            "version": "dev-next-8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pckg/collection.git",
-                "reference": "66274555af9f26f0e079021fe333b6ffc6c0b589"
+                "reference": "ae14b89573e33e09dbd1560365452b719eef09d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pckg/collection/zipball/66274555af9f26f0e079021fe333b6ffc6c0b589",
-                "reference": "66274555af9f26f0e079021fe333b6ffc6c0b589",
+                "url": "https://api.github.com/repos/pckg/collection/zipball/ae14b89573e33e09dbd1560365452b719eef09d2",
+                "reference": "ae14b89573e33e09dbd1560365452b719eef09d2",
                 "shasum": ""
             },
             "require": {
@@ -2143,9 +2197,9 @@
                 "pckg/concept": "dev-master"
             },
             "require-dev": {
-                "pckg-app/frontend-dev": "dev-master",
-                "pckg/database": "dev-master",
-                "pckg/framework": "dev-master"
+                "pckg-app/frontend-dev": "dev-next-8.0 as dev-master",
+                "pckg/database": "dev-next-8.0 as dev-master",
+                "pckg/framework": "dev-next-8.0 as dev-master"
             },
             "default-branch": true,
             "type": "library",
@@ -2171,9 +2225,9 @@
             "homepage": "https://github.com/pckg/collection",
             "support": {
                 "issues": "https://github.com/pckg/collection/issues",
-                "source": "https://github.com/pckg/collection/tree/master"
+                "source": "https://github.com/pckg/collection/tree/next-8.0"
             },
-            "time": "2021-11-10T17:25:49+00:00"
+            "time": "2022-04-17T11:33:50+00:00"
         },
         {
             "name": "pckg/concept",
@@ -2225,105 +2279,47 @@
             "time": "2021-11-09T11:25:31+00:00"
         },
         {
-            "name": "pckg/database",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pckg/database.git",
-                "reference": "c291f607ee68d52a53e5726dffae12f920bf4c95"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pckg/database/zipball/c291f607ee68d52a53e5726dffae12f920bf4c95",
-                "reference": "c291f607ee68d52a53e5726dffae12f920bf4c95",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-pdo": "*",
-                "pckg/cache": "dev-master",
-                "pckg/collection": "dev-master",
-                "pckg/concept": "dev-master",
-                "pckg/locale": "dev-master"
-            },
-            "require-dev": {
-                "aws/aws-sdk-php-resources": "^0.3.0",
-                "fzaninotto/faker": "dev-master",
-                "pckg-app/frontend-dev": "dev-master",
-                "pckg/auth": "dev-master",
-                "pckg/framework": "dev-master-yoda",
-                "pckg/htmlbuilder": "dev-master",
-                "pckg/manager": "dev-master",
-                "pckg/migrator": "dev-master"
-            },
-            "suggest": {
-                "fzaninotto/faker": "Use faker to mock data*",
-                "maximebf/debugbar": "Push queries and events to debugbar"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Pckg": "src\\",
-                    "Test": "tests\\src\\"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bojan Rajh",
-                    "email": "schtr4jh@schtr4jh.net"
-                }
-            ],
-            "description": "Just another php / orm / pdo implementation for simple and advanced data management",
-            "homepage": "https://github.com/pckg/database",
-            "support": {
-                "issues": "https://github.com/pckg/database/issues",
-                "source": "https://github.com/pckg/database/tree/master"
-            },
-            "time": "2022-04-01T19:52:38+00:00"
-        },
-        {
             "name": "pckg/framework",
-            "version": "dev-master",
+            "version": "dev-next-8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pckg/framework.git",
-                "reference": "941938a16d8e5a0dc6fe3db3af2aed5d4d1c2a3e"
+                "reference": "c02fd50b04b64e6e9b3dcb202e631f308e64793b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pckg/framework/zipball/941938a16d8e5a0dc6fe3db3af2aed5d4d1c2a3e",
-                "reference": "941938a16d8e5a0dc6fe3db3af2aed5d4d1c2a3e",
+                "url": "https://api.github.com/repos/pckg/framework/zipball/c02fd50b04b64e6e9b3dcb202e631f308e64793b",
+                "reference": "c02fd50b04b64e6e9b3dcb202e631f308e64793b",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+                "ext-pcntl": "*",
                 "ezyang/htmlpurifier": "dev-master",
                 "filp/whoops": "2.*",
                 "josegonzalez/dotenv": "dev-master",
                 "pckg/cache": "dev-master",
                 "pckg/concept": "dev-master",
-                "pckg/database": "dev-master",
                 "pckg/locale": "dev-master",
+                "php": "8.0.*",
                 "rollbar/rollbar": "2.*",
                 "tgalopin/html-sanitizer": "dev-master",
                 "twig/twig": ">=1 <2"
             },
             "require-dev": {
                 "defuse/php-encryption": "2.*",
+                "ext-pdo": "*",
                 "maximebf/debugbar": "1.*",
                 "nesbot/carbon": "2.*",
-                "pckg-app/frontend-dev": "dev-master",
-                "pckg/auth": "dev-master",
-                "pckg/htmlbuilder": "dev-master",
+                "pckg-app/frontend-dev": "dev-next-8.0 as dev-master",
+                "pckg/auth": "dev-next-8.0 as dev-master",
+                "pckg/collection": "dev-next-8.0 as dev-master",
+                "pckg/database": "dev-next-8.0 as dev-master",
+                "pckg/htmlbuilder": "dev-next-8.0 as dev-master",
                 "pckg/mail": "dev-master",
-                "pckg/manager": "dev-master",
+                "pckg/manager": "dev-next-8.0 as dev-master",
                 "pckg/migrator": "dev-master",
-                "pckg/queue": "dev-master",
+                "pckg/queue": "dev-next-8.0 as dev-master",
                 "pckg/translator": "dev-master",
                 "ramsey/uuid": ">=4.1"
             },
@@ -2331,6 +2327,7 @@
             "type": "library",
             "autoload": {
                 "files": [
+                    "src/Pckg/Framework/Helper/functions_bc.php",
                     "src/Pckg/Framework/Helper/functions.php"
                 ],
                 "psr-0": {
@@ -2351,9 +2348,9 @@
             "homepage": "https://github.com/pckg/framework",
             "support": {
                 "issues": "https://github.com/pckg/framework/issues",
-                "source": "https://github.com/pckg/framework/tree/master"
+                "source": "https://github.com/pckg/framework/tree/next-8.0"
             },
-            "time": "2021-12-24T11:10:59+00:00"
+            "time": "2022-04-18T07:03:34+00:00"
         },
         {
             "name": "pckg/locale",
@@ -3406,22 +3403,27 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.2",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -3448,9 +3450,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.2"
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
-            "time": "2021-11-05T16:50:12+00:00"
+            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -3837,25 +3839,24 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "4.2.3",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df"
+                "reference": "8505afd4fea63b81a85d3b7b53ac3cb8dc347c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df",
-                "reference": "fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8505afd4fea63b81a85d3b7b53ac3cb8dc347c28",
+                "reference": "8505afd4fea63b81a85d3b7b53ac3cb8dc347c28",
                 "shasum": ""
             },
             "require": {
                 "brick/math": "^0.8 || ^0.9",
+                "ext-ctype": "*",
                 "ext-json": "*",
-                "php": "^7.2 || ^8.0",
-                "ramsey/collection": "^1.0",
-                "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-php80": "^1.14"
+                "php": "^8.0",
+                "ramsey/collection": "^1.0"
             },
             "replace": {
                 "rhumsaa/uuid": "self.version"
@@ -3892,9 +3893,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "4.x-dev"
-                },
                 "captainhook": {
                     "force-install": true
                 }
@@ -3919,7 +3917,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/uuid/issues",
-                "source": "https://github.com/ramsey/uuid/tree/4.2.3"
+                "source": "https://github.com/ramsey/uuid/tree/4.3.1"
             },
             "funding": [
                 {
@@ -3931,7 +3929,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-25T23:10:38+00:00"
+            "time": "2022-03-27T21:42:02+00:00"
         },
         {
             "name": "rollbar/rollbar",
@@ -5321,25 +5319,25 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v2.5.1",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "3.0-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5368,7 +5366,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -5384,7 +5382,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:53:40+00:00"
+            "time": "2022-01-02T09:55:41+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -5548,20 +5546,20 @@
         },
         {
             "name": "symfony/event-dispatcher-contracts",
-            "version": "v2.5.1",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher-contracts.git",
-                "reference": "f98b54df6ad059855739db6fcbc2d36995283fe1"
+                "reference": "7bc61cc2db649b4637d331240c5346dcc7708051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/f98b54df6ad059855739db6fcbc2d36995283fe1",
-                "reference": "f98b54df6ad059855739db6fcbc2d36995283fe1",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/7bc61cc2db649b4637d331240c5346dcc7708051",
+                "reference": "7bc61cc2db649b4637d331240c5346dcc7708051",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": ">=8.0.2",
                 "psr/event-dispatcher": "^1"
             },
             "suggest": {
@@ -5570,7 +5568,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "3.0-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5607,7 +5605,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.5.1"
+                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -5623,7 +5621,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:53:40+00:00"
+            "time": "2022-01-02T09:55:41+00:00"
         },
         {
             "name": "symfony/finder",
@@ -6261,21 +6259,20 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.4.7",
+            "version": "v6.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb"
+                "reference": "e13f6757e267d687e20ec5b26ccfcbbe511cd8f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/38a44b2517b470a436e1c944bf9b9ba3961137fb",
-                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e13f6757e267d687e20ec5b26ccfcbbe511cd8f4",
+                "reference": "e13f6757e267d687e20ec5b26ccfcbbe511cd8f4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.16"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "autoload": {
@@ -6303,7 +6300,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.4.7"
+                "source": "https://github.com/symfony/process/tree/v6.0.7"
             },
             "funding": [
                 {
@@ -6319,26 +6316,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-18T16:18:52+00:00"
+            "time": "2022-03-18T16:21:55+00:00"
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.5.1",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "24d9dc654b83e91aa59f9d167b131bc3b5bea24c"
+                "reference": "e517458f278c2131ca9f262f8fbaf01410f2c65c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/24d9dc654b83e91aa59f9d167b131bc3b5bea24c",
-                "reference": "24d9dc654b83e91aa59f9d167b131bc3b5bea24c",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/e517458f278c2131ca9f262f8fbaf01410f2c65c",
+                "reference": "e517458f278c2131ca9f262f8fbaf01410f2c65c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "psr/container": "^1.1",
-                "symfony/deprecation-contracts": "^2.1|^3"
+                "php": ">=8.0.2",
+                "psr/container": "^2.0"
             },
             "conflict": {
                 "ext-psr": "<1.1|>=2"
@@ -6349,7 +6345,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "3.0-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -6386,7 +6382,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/v2.5.1"
+                "source": "https://github.com/symfony/service-contracts/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -6402,38 +6398,37 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-13T20:07:29+00:00"
+            "time": "2022-03-13T20:10:05+00:00"
         },
         {
             "name": "symfony/string",
-            "version": "v5.4.3",
+            "version": "v6.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10"
+                "reference": "522144f0c4c004c80d56fa47e40e17028e2eefc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/92043b7d8383e48104e411bc9434b260dbeb5a10",
-                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "url": "https://api.github.com/repos/symfony/string/zipball/522144f0c4c004c80d56fa47e40e17028e2eefc2",
+                "reference": "522144f0c4c004c80d56fa47e40e17028e2eefc2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
+                "php": ">=8.0.2",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-intl-grapheme": "~1.0",
                 "symfony/polyfill-intl-normalizer": "~1.0",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php80": "~1.15"
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
-                "symfony/translation-contracts": ">=3.0"
+                "symfony/translation-contracts": "<2.0"
             },
             "require-dev": {
-                "symfony/error-handler": "^4.4|^5.0|^6.0",
-                "symfony/http-client": "^4.4|^5.0|^6.0",
-                "symfony/translation-contracts": "^1.1|^2",
-                "symfony/var-exporter": "^4.4|^5.0|^6.0"
+                "symfony/error-handler": "^5.4|^6.0",
+                "symfony/http-client": "^5.4|^6.0",
+                "symfony/translation-contracts": "^2.0|^3.0",
+                "symfony/var-exporter": "^5.4|^6.0"
             },
             "type": "library",
             "autoload": {
@@ -6472,7 +6467,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v5.4.3"
+                "source": "https://github.com/symfony/string/tree/v6.0.3"
             },
             "funding": [
                 {
@@ -6488,36 +6483,35 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:53:40+00:00"
+            "time": "2022-01-02T09:55:41+00:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.6",
+            "version": "v6.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "294e9da6e2e0dd404e983daa5aa74253d92c05d0"
+                "reference": "38358405ae948963c50a3aae3dfea598223ba15e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/294e9da6e2e0dd404e983daa5aa74253d92c05d0",
-                "reference": "294e9da6e2e0dd404e983daa5aa74253d92c05d0",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/38358405ae948963c50a3aae3dfea598223ba15e",
+                "reference": "38358405ae948963c50a3aae3dfea598223ba15e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php80": "^1.16"
+                "php": ">=8.0.2",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<5.4.3",
-                "symfony/console": "<4.4"
+                "symfony/console": "<5.4"
             },
             "require-dev": {
                 "ext-iconv": "*",
-                "symfony/console": "^4.4|^5.0|^6.0",
-                "symfony/process": "^4.4|^5.0|^6.0",
-                "symfony/uid": "^5.1|^6.0",
+                "symfony/console": "^5.4|^6.0",
+                "symfony/process": "^5.4|^6.0",
+                "symfony/uid": "^5.4|^6.0",
                 "twig/twig": "^2.13|^3.0.4"
             },
             "suggest": {
@@ -6561,7 +6555,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.6"
+                "source": "https://github.com/symfony/var-dumper/tree/v6.0.6"
             },
             "funding": [
                 {
@@ -6577,7 +6571,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-02T12:42:23+00:00"
+            "time": "2022-03-02T12:58:14+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -6890,11 +6884,38 @@
             "time": "2021-03-09T10:59:23+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "pckg-app/frontend-dev",
+            "version": "dev-next-8.0",
+            "alias": "dev-master",
+            "alias_normalized": "dev-master"
+        },
+        {
+            "package": "pckg/auth",
+            "version": "dev-next-8.0",
+            "alias": "dev-master",
+            "alias_normalized": "dev-master"
+        },
+        {
+            "package": "pckg/collection",
+            "version": "dev-next-8.0",
+            "alias": "dev-master",
+            "alias_normalized": "dev-master"
+        },
+        {
+            "package": "pckg/framework",
+            "version": "dev-next-8.0",
+            "alias": "dev-master",
+            "alias_normalized": "dev-master"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "pckg-app/frontend-dev": 20,
-        "pckg/framework": 20
+        "pckg/framework": 20,
+        "pckg/collection": 20,
+        "pckg/auth": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

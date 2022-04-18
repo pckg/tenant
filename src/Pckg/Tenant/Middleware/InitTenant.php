@@ -6,7 +6,6 @@ use Pckg\Tenant\Service\TenantManager;
 
 class InitTenant
 {
-
     public TenantManager $tenantManager;
 
     public function __construct(TenantManager $tenantManager)

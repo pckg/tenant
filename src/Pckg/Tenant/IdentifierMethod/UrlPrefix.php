@@ -6,7 +6,6 @@ use Pckg\Framework\Request;
 
 class UrlPrefix
 {
-
     public Request $request;
 
     public function __construct(Request $request)
